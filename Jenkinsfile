@@ -33,7 +33,7 @@ pipeline{
 
 steps{
 
-bat 'mvn compile'
+sh 'mvn compile'
 
 }
 
