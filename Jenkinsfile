@@ -43,7 +43,7 @@ stage('Test'){
 
 steps{
 
-bat 'mvn test'
+sh 'mvn test'
 
 }
 
@@ -53,7 +53,7 @@ stage('Package'){
 
 steps{
 
-bat 'mvn package'
+sh 'mvn package'
 
 }
 
@@ -65,7 +65,7 @@ stage('Deploy')
 
 steps{
 
-bat 'java -jar /var/lib/jenkins/workspace/Buzztalk/target/*.jar'
+sh 'java -jar /var/lib/jenkins/workspace/Buzztalk/target/*.jar'
 
 }
         }
