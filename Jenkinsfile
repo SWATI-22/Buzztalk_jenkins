@@ -30,25 +30,44 @@ pipeline{
             }
         }
         stage('Build'){
-            steps{
-                sh 'mvn compile'
-            }
-        }
-        stage('Test'){
-            steps{
-                sh 'mvn test'
-            }
-        }
-        stage('Package'){
-            steps{
-                sh 'mvn package'
-            }
-        }
-        stage('Deploy')
-        {
-            steps{
-                sh 'hello'
-            }
+
+steps{
+
+bat 'mvn compile'
+
+}
+
+}
+
+stage('Test'){
+
+steps{
+
+bat 'mvn test'
+
+}
+
+}
+
+stage('Package'){
+
+steps{
+
+bat 'mvn package'
+
+}
+
+}
+
+stage('Deploy')
+
+{
+
+steps{
+
+bat 'java -jar /var/lib/jenkins/workspace/Buzztalk/target/*.jar'
+
+}
         }
     }
 }
