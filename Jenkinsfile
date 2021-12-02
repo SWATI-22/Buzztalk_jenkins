@@ -21,7 +21,7 @@
 
 
 pipeline{
-    agent{label 'main'}
+    agent{label 'master'}
     tools{maven 'M3'}
     stages{
         stage('Checkout'){
