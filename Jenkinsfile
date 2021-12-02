@@ -1,73 +1,73 @@
-// pipeline{
-// agent any
+pipeline{
+agent any
 
-// 		stages {
-// 			stage('Verify Branch'){
-// 			steps{
-// 			echo "@GIT_BRANCH"
+		stages {
+			stage('Verify Branch'){
+			steps{
+			echo "@GIT_BRANCH"
 			
-// 			}
-// 			}
+			}
+			}
 		
-//             			stage('Hello'){
-//             			steps{
-//             			echo "Hello world....!!!"
+            			stage('Hello'){
+            			steps{
+            			echo "Hello world....!!!"
 
-//             			}
+            			}
 
-// 		                }
-// 	                }
+		                }
+	                }
+}
+
+
+// pipeline{
+//     agent{label 'master'}
+//     tools{maven 'M3'}
+//     stages{
+//         stage('Checkout'){
+//             steps{
+//                 git branch: 'main', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
+//             }
+//         }
+//         stage('Build'){
+
+// steps{
+
+// bat 'mvn compile'
+
 // }
 
+// }
 
-pipeline{
-    agent{label 'master'}
-    tools{maven 'M3'}
-    stages{
-        stage('Checkout'){
-            steps{
-                git branch: 'main', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
-            }
-        }
-        stage('Build'){
+// stage('Test'){
 
-steps{
+// steps{
 
-bat 'mvn compile'
+// sh 'mvn test'
 
-}
+// }
 
-}
+// }
 
-stage('Test'){
+// stage('Package'){
 
-steps{
+// steps{
 
-sh 'mvn test'
+// sh 'mvn package'
 
-}
+// }
 
-}
+// }
 
-stage('Package'){
+// stage('Deploy')
 
-steps{
+// {
 
-sh 'mvn package'
+// steps{
 
-}
+// sh 'java -jar /var/lib/jenkins/workspace/Buzztalk/target/*.jar'
 
-}
-
-stage('Deploy')
-
-{
-
-steps{
-
-sh 'java -jar /var/lib/jenkins/workspace/Buzztalk/target/*.jar'
-
-}
-        }
-    }
-}
+// }
+//         }
+//     }
+// }
