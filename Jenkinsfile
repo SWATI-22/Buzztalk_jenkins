@@ -22,9 +22,9 @@
 
 pipeline{
 agent any
-tools{
-maven 'apache-maven-3.8.3'
-}
+// agent{label 'master'}
+
+tools{maven 'M3'}
 
 stages {
 stage('Verify Branch'){
