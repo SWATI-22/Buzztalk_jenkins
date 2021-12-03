@@ -58,7 +58,7 @@ bat 'mvn test'
 }
 stage('Deploy'){
 steps{
-bat 'java -jar "C:/Program Files (x86)/Jenkins/workspace/Buzztalk2/Buzztalk/.mvn/wrapper/maven-wrapper.jar"'
+bat 'java -jar "C:/Program Files (x86)/Jenkins/workspace/buzztalk4/target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar"'
 }
 }
 
