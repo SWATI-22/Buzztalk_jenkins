@@ -33,18 +33,18 @@ git branch: 'main', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
 stage('build')
 {
 steps {
-bat 'mvn --version'
+sh 'mvn --version'
 }
 
 }
 stage('Test'){
 steps{
-bat 'mvn test'
+sh 'mvn test'
 }
 }
 stage('Package'){
 steps{
-bat 'mvn package'
+sh 'mvn package'
 }
 }
 }
