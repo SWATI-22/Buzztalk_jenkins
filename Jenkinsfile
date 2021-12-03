@@ -21,53 +21,31 @@
 
 
 pipeline{
-    agent{label 'master'}
-    tools{maven 'M3'}
-    stages{
-        stage('Checkout'){
-            steps{
-                git branch: 'master', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
-            }
-        }
-        stage('Build'){
-
+agent{label 'master'}
+tools{maven 'M3'}
+stages{
+stage('Checkout'){
 steps{
-
-bat 'mvn compile'
-
+git branch: 'master', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
+}
 }
 
-}
-
-stage('Test'){
-
-steps{
-
-bat(/mvn test/)
-
-}
-
-}
-
-stage('Package'){
-
-steps{
-
-bat (/mvn package/)
-
-}
-
-}
-
-stage('Deploy')
-
+stage('build')
 {
-
-steps{
-
-bat(/"java" -jar /var/lib/jenkins/workspace/buzztalk4/target/*.jar'/)
+steps {
+bat 'mvn --version'
+}
 
 }
-        }
-    }
+stage('Test'){
+steps{
+bat 'mvn test'
+}
+}
+stage('Package'){
+steps{
+bat 'mvn package'
+}
+}
+}
 }
