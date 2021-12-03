@@ -21,12 +21,12 @@
 
 
 pipeline{
-agent{label 'master'}
+agent any
 tools{maven 'M3'}
 stages{
 stage('Checkout'){
 steps{
-git branch: 'master', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
+git branch: 'main', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
 }
 }
 
