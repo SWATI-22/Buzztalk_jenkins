@@ -33,19 +33,24 @@ git branch: 'main', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
 stage('build')
 {
 steps {
-sh 'mvn --version'
+bat 'mvn --version'
 }
 
 }
 stage('Test'){
 steps{
-sh 'mvn test'
+bat 'mvn test'
 }
 }
 stage('Package'){
 steps{
-sh 'mvn package'
+bat 'mvn package'
 }
+}
+	stage('Deploy')
+{
+steps{
+sh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
 }
 }
 }
