@@ -47,10 +47,10 @@ steps{
 bat 'mvn package'
 }
 }
-	stage('Deploy')
-{
-steps{
-sh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
-}
-}
+// 	stage('Deploy')
+// {
+// steps{
+// sh 'java -jar /var/lib/jenkins/workspace/PetClinicDeclarativePipeline/target/*.jar'
+// }
+// }
 }
