@@ -1,24 +1,13 @@
-
-
-
 pipeline{
-agent any
-
-
-tools{maven 'M3'}
-
+agent 'any'
+tools{
+maven 'M3'
+jdk 'JAVA_HOME'
+}
 stages {
-stage('Verify Branch'){
-steps{
-echo "@GIT_BRANCH"
-
-
-
-}
-}
 stage('Checkout'){
 steps{
-git branch: 'main', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
+git branch: 'master', url: 'https://github.com/SWATI-22/Buzztalk_jenkins.git'
 }
 }
 stage('Build'){
@@ -31,21 +20,10 @@ steps{
 bat 'mvn package'
 }
 }
-
-stage('Test'){
-steps{
-bat 'mvn test'
-}
-}
 stage('Deploy'){
 steps{
-bat 'java -jar "C:/Program Files (x86)/Jenkins/workspace/buzztalk4/target/simple-maven-project-with-tests-1.0-SNAPSHOT.jar"'
+bat 'java -jar C:/ProgramData/Jenkins/.jenkins/workspace/Buzztalk/target/Buzztalk-0.0.1-SNAPSHOT.jar'
 }
 }
-
-
-
-
-
 }
 }
