@@ -22,7 +22,7 @@ bat 'mvn package'
 }
 stage('Deploy'){
 steps{
-bat 'java -jar C:/Program Files (x86)/Jenkin/workspace/Buzztalk/target/Buzztalk-0.0.1-SNAPSHOT.jar'
+bat 'java -jar C:/Program Files (x86)/Jenkin/workspace/test12/Buzztalk/target/Buzztalk-0.0.1-SNAPSHOT.jar'
 }
 }
 }
