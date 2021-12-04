@@ -24,7 +24,7 @@ stage('Deploy'){
 steps{
   
 
-bat 'java -jar C:/Program Files (x86)/Jenkin/workspace/test12/Buzztalk/bin/Buzztalk-0.0.1-SNAPSHOT.jar'
+bat 'java -jar C://Program Files (x86)/Jenkin/workspace/test12/Buzztalk/bin/Buzztalk-0.0.1-SNAPSHOT.jar'
 }
 }
 }
