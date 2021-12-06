@@ -7,7 +7,7 @@ pipeline{
 	stages {
 		stage('Checkout'){
 			steps{
-				git branch: 'main', url: 'https://github.com/sumit-singh-shekhawat/Buzztalk_jenkins.git'
+				git branch: 'main', url: 'https://github.com/Gsardhana/Buzzztalk.git'
 			}
 		}
 		stage('Build'){
